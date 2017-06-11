@@ -15,7 +15,7 @@ using namespace std;
 static const char alphanum[] =
 //////////////////////////////////
 "0123456789"                   //
-"!#$%&/()=?*+'~^|\}{[]><;:-_,."//
+"/()=?+}{[]><-_"               //
 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"   //
 "abcdefghijklmnopqrstuvwxyz";  //
 /////////////////////////////////
@@ -23,20 +23,23 @@ int stringLength = sizeof(alphanum) - 1;
 
 char genRandom()
 {
-    return alphanum[rand() % stringLength];
+	return alphanum[rand() % stringLength];
 }
 
 int main()
 {
-    srand(time(0));
-    for(int z=0; z < 21; z++)
+	int k;
+	cout << "Enter lenght of password" << endl;
+	cin >> k;
+	srand(time(0));
+	for (int z = 0; z < k; z++)
 
-    {
-        cout << genRandom();
+	{
+		cout << genRandom();
 
-    }
-	cout<<"         "<<endl;
+	}
+	cout << "         " << endl;
 	system("pause");
-    return 0;
+	return 0;
 
 }
